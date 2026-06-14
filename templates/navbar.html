@@ -1,0 +1,20 @@
+<div class="navbar">
+        <div class="logo">
+            <a class="nav-logo" href="/"><span class="nav-logo-text-1">Gaming</span><span
+                    class="nav-logo-text-2">Hub</span></a>
+        </div>
+        <div class="nav-links">
+            {% if session.get("loggedin") %}
+            <a class="nav-link" href="/">{{ session["firstname"] }} {{ session["lastname"] }}</a>
+            <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="/">Home</a>
+            <a class="nav-link {% if active_page == 'tournament' %}active{% endif %}" href="/tournament">Tournament</a>
+            <a class="nav-link {% if active_page == 'leaderboard' %}active{% endif %}"
+                href="/leaderboard">Leaderboard</a>
+            <a class="nav-link {% if active_page == 'teams' %}active{% endif %}" href="/teams">Teams</a>
+            <a class="nav-link" href="/logout">Logout</a>
+            {% else %}
+            <a class="nav-login" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+            <a class="nav-join" href="/join"><i class="bi bi-person-add"></i>Join</a>
+            {% endif %}
+        </div>
+    </div>

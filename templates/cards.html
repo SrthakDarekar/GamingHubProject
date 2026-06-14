@@ -1,0 +1,43 @@
+<div class="cards-container">
+    {% for match in matches %}
+    <div class="tournament-card mt-5" data-game="{{ match.game }}">
+        <p class="gamename">Game: {{ match.game }}</p>
+        <h4 class="trname">{{ match.Tournament_name }}</h4>
+        <div class="status">
+            {% if match.status == 'Live' %}
+
+            <p class="status-live">
+                🔴 Live
+            </p>
+
+            {% elif match.status == 'Upcoming' %}
+
+            <p class="status-upcoming">
+                🟡 Upcoming
+            </p>
+
+            {% elif match.status == 'Completed' %}
+
+            <p class="status-completed">
+                ✅ Completed
+            </p>
+
+            {% else %}
+
+            <p class="status-cancelled">
+                ❌ Cancelled
+            </p>
+
+            {% endif %}
+        </div>
+        <div class="card-footer">
+
+            <h5 class="prize-pool">${{ "{:,}".format(match.prize_pull) }}
+                <p class="prize-text">Prize Pool</p>
+            </h5>
+
+            <button type="submit" class="match-btn">Join</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
