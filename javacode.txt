@@ -1,0 +1,313 @@
+JAVASCRIPT FILTERING CHEAT SHEET
+
+1. function
+
+function filterCards(game){
+}
+
+Purpose:
+Creates reusable code.
+
+Example:
+filterCards("pubg")
+
+Meaning:
+Run the filterCards function and pass "pubg" into it.
+
+---
+
+2. document
+
+document
+
+Purpose:
+Represents the whole HTML page.
+
+Example:
+document.querySelectorAll()
+
+Meaning:
+Search the page for elements.
+
+---
+
+3. querySelectorAll()
+
+document.querySelectorAll('.tournament-card')
+
+Purpose:
+Find all matching elements.
+
+Returns:
+A collection of elements.
+
+Example:
+
+<div class="tournament-card"></div>
+<div class="tournament-card"></div>
+
+Result:
+Both cards are returned.
+
+---
+
+4. const
+
+const cards = document.querySelectorAll(...)
+
+Purpose:
+Create a variable that cannot be reassigned.
+
+Example:
+const name = "GamingHub"
+
+Meaning:
+Store data for later use.
+
+---
+
+5. forEach()
+
+cards.forEach(card => {
+})
+
+Purpose:
+Loop through every item.
+
+Example:
+cards.forEach(card => {
+console.log(card)
+})
+
+Meaning:
+Visit every card one by one.
+
+---
+
+6. Arrow Function =>
+
+card => {
+}
+
+Equivalent to:
+
+function(card){
+}
+
+Purpose:
+Shorter way to write functions.
+
+---
+
+7. if
+
+if(game === 'all'){
+}
+
+Purpose:
+Check if a condition is true.
+
+Example:
+if(score > 100)
+
+Meaning:
+Only run code if score is greater than 100.
+
+---
+
+8. else
+
+else{
+}
+
+Purpose:
+Run when the if condition is false.
+
+Example:
+if(score > 100){
+...
+}
+else{
+...
+}
+
+---
+
+9. ===
+
+game === 'all'
+
+Purpose:
+Strict comparison.
+
+Meaning:
+Check if two values are exactly equal.
+
+Examples:
+
+5 === 5      true
+5 === "5"    false
+
+---
+
+10. classList
+
+card.classList
+
+Purpose:
+Access all classes of an element.
+
+Example:
+
+<div class="card moba">
+
+Classes:
+card
+moba
+
+---
+
+11. classList.contains()
+
+card.classList.contains("moba")
+
+Purpose:
+Check whether an element has a class.
+
+Returns:
+true or false
+
+Example:
+
+<div class="card moba">
+
+contains("moba")
+true
+
+contains("pubg")
+false
+
+---
+
+12. style
+
+card.style
+
+Purpose:
+Access inline CSS with JavaScript.
+
+Example:
+card.style.color = "red"
+
+---
+
+13. display
+
+card.style.display = "none"
+
+Purpose:
+Show or hide elements.
+
+Values:
+
+block = visible
+none = hidden
+
+Examples:
+
+card.style.display = "none"
+Hide card
+
+card.style.display = "block"
+Show card
+
+---
+
+14. onchange
+
+<select onchange="filterCards(this.value)">
+
+Purpose:
+Run code when a selection changes.
+
+Example:
+User chooses PUBG
+
+JavaScript runs:
+filterCards("pubg")
+
+---
+
+15. this
+
+this.value
+
+Purpose:
+Refers to the current element.
+
+Example:
+
+<select>
+    <option value="pubg">
+</select>
+
+When PUBG is selected:
+
+this.value
+
+Result:
+"pubg"
+
+---
+
+16. value
+
+<option value="pubg">
+
+Purpose:
+Stores data for an input element.
+
+Displayed:
+PUBG
+
+Actual value:
+pubg
+
+---
+
+17. DOM
+
+DOM = Document Object Model
+
+Purpose:
+The HTML page represented as JavaScript objects.
+
+Example:
+JavaScript can:
+
+Change text
+Hide elements
+Show elements
+Add elements
+Delete elements
+
+because it interacts with the DOM.
+
+---
+
+FILTER LOGIC SUMMARY
+
+1. User selects PUBG
+2. onchange fires
+3. filterCards("pubg") runs
+4. JavaScript finds all cards
+5. Loop through cards
+6. Check:
+
+card.classList.contains("pubg")
+
+7. If true -> show card
+8. If false -> hide card
+
+Result:
+Only PUBG cards remain visible.
